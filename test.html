@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>글쓰기</title>
+</head>
+<body>
+    <h1>글쓰기</h1>
+    <form method="POST" action="write.php"> <!--POST로 write.php에 데이터 전송-->
+
+    <div>
+        <label>제목</label>
+        <input type="text" name="title"> <!--name:$_POST['title']로 받음-->
+    </div>
+    <div>
+        <label>글 내용</label>
+        <textarea name="content"></textarea>
+    </div>
+    <div>
+        <label>작성자 ID</label>
+        <input type="number" name="author_id">
+    </div>
+    <button type="submit">등록</button>
+    </form>
+</body>

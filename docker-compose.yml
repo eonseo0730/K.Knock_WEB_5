@@ -1,0 +1,25 @@
+services:
+  
+  web:
+    build: ./php #php 폴더의 Dockerfile로 이미지 빌드
+    ports:
+      - "8081:80" # 8081포트->컨테이너의 81포트로 연결
+    volumes:
+      - .:/var/www/html # board/폴더를 컨테이너 웹 루트에 연결
+    depends_on:
+      - db #db 컨테이너 먼저 실행 후 web 실행
+  
+  db:
+    image: mysql:8.0 # mysql 8.0 공식 이미지 사용
+    environment:
+      MYSQL_ROOT_PASSWORD: DB # DB root 비밀번호
+      MYSQL_DATABASE: board # 처음 시작 시 board라는 DB 생성
+    ports: 
+      - "3306:3306" #mysql 기본포트
+  
+  phpmyadmin: #mysql을 웹브라우저에서 gui로 사용할 수 있게 해주는 툴
+    image: phpmyadmin #phpMyAdmin 공식 이미지 사용
+    ports:
+      - "8082:80"
+    environment:
+      PMA_HOST: db # db컨테이너의 mysql 접속
