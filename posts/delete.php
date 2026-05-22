@@ -9,8 +9,11 @@ if(!isset($_SESSION['user_id'])){ // 로그인 안 된 경우
 
 $id=$_GET['id']; // URL에서 글 번호 받음
 
+
+mysqli_query($conn, "DELETE FROM comments WHERE post_id = $id");
 $sql="DELETE FROM posts WHERE id=$id";
 mysqli_query($conn, $sql);
+
 header("Location:list.php");
 exit;
 ?>

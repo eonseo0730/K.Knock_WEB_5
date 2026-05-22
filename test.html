@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>글쓰기</title>
+    <title>로그인</title>
 </head>
 <body>
-    <h1>글쓰기</h1>
-    <form method="POST" action="write.php"> <!--POST로 write.php에 데이터 전송-->
-
-    <div>
-        <label>제목</label>
-        <input type="text" name="title"> <!--name:$_POST['title']로 받음-->
-    </div>
-    <div>
-        <label>글 내용</label>
-        <textarea name="content"></textarea>
-    </div>
-    <div>
-        <label>작성자 ID</label>
-        <input type="number" name="author_id">
-    </div>
-    <button type="submit">등록</button>
+    <h1>로그인</h1>
+    <?php if(isset($error)) echo "<p>$error</p>"?> <!-- 변수가 존재하는지 확인하고 로그인 실패 시 에러 메시지 출력-->
+    
+    <form method="POST" action="login.php">
+        <div>
+            <label>아이디</label>
+            <input type="text" name="username">
+        </div>
+        <div>
+            <label>비밀번호</label>
+            <input type="password" name="password">
+        </div>
+        <button type="submit">로그인</button>
     </form>
+    <a href="register.php">회원가입</a>
 </body>
+</html>
