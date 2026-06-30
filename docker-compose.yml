@@ -6,6 +6,7 @@ services:
       - "8081:80" # 8081포트->컨테이너의 81포트로 연결
     volumes:
       - .:/var/www/html # board/폴더를 컨테이너 웹 루트에 연결
+      - ./uploads:/var/www/html/uploads
     depends_on:
       - db #db 컨테이너 먼저 실행 후 web 실행
   

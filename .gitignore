@@ -1,0 +1,23 @@
+# 환경변수 / 민감정보
+.env
+
+# 업로드된 파일 (용량 + 민감정보 방지)
+uploads/*
+!uploads/.gitkeep
+
+# PHP 관련
+vendor/
+*.log
+
+# Docker 관련 (로컬 전용 볼륨 데이터가 있다면)
+mysql-data/
+db_data/
+
+# OS / 에디터 관련
+.DS_Store
+.vscode/
+*.swp
+
+# 압축/백업 파일
+*.zip
+*.bak
