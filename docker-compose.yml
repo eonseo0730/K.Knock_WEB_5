@@ -14,7 +14,7 @@ services:
     image: mysql:8.0 # mysql 8.0 공식 이미지 사용
     environment:
       MYSQL_ROOT_PASSWORD: _MY_DB_PASS_WORD # DB root 비밀번호
-      MYSQL_DATABASSE: board # 처음 시작 시 board라는 DB 생성
+      MYSQL_DATABASE: board # 처음 시작 시 board라는 DB 생성
     #ports: 
       #- "3306:3306" #mysql 기본포트
   
